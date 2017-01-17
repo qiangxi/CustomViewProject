@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HexagonTextView">
+        <attr name="leftTopText" format="string"/>
+        <attr name="rightBottomText" format="string"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="textColor" format="color"/>
+        <attr name="lineColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="StateLine">
+        <attr name="selectedCircleColor" format="color"/>
+        <attr name="selectedLineColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="RippleView">
+        <attr name="rippleVelocity" format="integer"/>
+        <attr name="rippleWidth" format="integer"/>
+        <attr name="rippleViewColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="RadarSearchView">
+        <attr name="radiusLevel" format="integer"/>
+        <attr name="insideText" format="string"/>
+        <attr name="insideTextColor" format="color"/>
+        <attr name="insideLineColor" format="color"/>
+        <attr name="circleColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="VolumeControlView">
+        <attr name="circleTextColor" format="color"/>
+        <attr name="circleTextSize" format="integer"/>
+        <attr name="CircleColor" format="color"/>
+        <attr name="circleRadius" format="integer"/>
+        <attr name="circleWidth" format="integer"/>
+        <attr name="blockColor" format="color"/>
+        <attr name="blockTotalCount" format="integer"/>
+    </declare-styleable>
+</resources>

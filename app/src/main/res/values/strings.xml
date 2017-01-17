@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CustomViewProject</string>
+    <string name="HexagonTextViewDemoActivity">HexagonTextViewDemo</string>
+</resources>
