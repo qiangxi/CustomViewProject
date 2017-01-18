@@ -2,7 +2,6 @@ package com.lanma.customviewproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -10,11 +9,12 @@ import android.widget.ListView;
 import com.lanma.customviewproject.R;
 import com.lanma.customviewproject.adapter.MainListAdapter;
 import com.lanma.customviewproject.entity.MainListInfo;
+import com.lanma.customviewproject.views.swipeback.SwipeBackActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends SwipeBackActivity implements AdapterView.OnItemClickListener {
     private ListView mListView;
     private List<MainListInfo> mList = new ArrayList<>();
 
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mList.add(new MainListInfo("侧滑删除layout", SlideLayoutActivity.class));
         mList.add(new MainListInfo("仿支付宝物流状态", StateLineActivity.class));
         mList.add(new MainListInfo("音量调节View", VolumeControlViewActivity.class));
+        mList.add(new MainListInfo("ListPopupWindow", ListPopupWindowActivity.class));
         mListView.setAdapter(new MainListAdapter(this, mList));
         mListView.setOnItemClickListener(this);
     }
