@@ -51,20 +51,6 @@ public class ElasticityScrollView extends ScrollView {
     }
 
     private class ElasticityDragCallback extends ViewDragHelper.Callback {
-        @Override
-        public void onViewDragStateChanged(int state) {
-            super.onViewDragStateChanged(state);
-        }
-
-        @Override
-        public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
-            super.onViewPositionChanged(changedView, left, top, dx, dy);
-        }
-
-        @Override
-        public void onViewCaptured(View capturedChild, int activePointerId) {
-            super.onViewCaptured(capturedChild, activePointerId);
-        }
 
         @Override
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
@@ -89,38 +75,8 @@ public class ElasticityScrollView extends ScrollView {
         }
 
         @Override
-        public void onEdgeTouched(int edgeFlags, int pointerId) {
-            super.onEdgeTouched(edgeFlags, pointerId);
-        }
-
-        @Override
-        public boolean onEdgeLock(int edgeFlags) {
-            return super.onEdgeLock(edgeFlags);
-        }
-
-        @Override
-        public void onEdgeDragStarted(int edgeFlags, int pointerId) {
-            super.onEdgeDragStarted(edgeFlags, pointerId);
-        }
-
-        @Override
-        public int getOrderedChildIndex(int index) {
-            return super.getOrderedChildIndex(index);
-        }
-
-        @Override
-        public int getViewHorizontalDragRange(View child) {
-            return super.getViewHorizontalDragRange(child);
-        }
-
-        @Override
         public int getViewVerticalDragRange(View child) {
             return getHeight() / 2;
-        }
-
-        @Override
-        public int clampViewPositionHorizontal(View child, int left, int dx) {
-            return super.clampViewPositionHorizontal(child, left, dx);
         }
 
         @Override
