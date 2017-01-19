@@ -2,6 +2,7 @@ package com.lanma.customviewproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -9,12 +10,11 @@ import android.widget.ListView;
 import com.lanma.customviewproject.R;
 import com.lanma.customviewproject.adapter.MainListAdapter;
 import com.lanma.customviewproject.entity.MainListInfo;
-import com.lanma.customviewproject.views.swipeback.SwipeBackActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends SwipeBackActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView mListView;
     private List<MainListInfo> mList = new ArrayList<>();
 
