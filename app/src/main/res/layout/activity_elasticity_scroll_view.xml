@@ -14,15 +14,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:background="@color/colorPrimaryDark"
-            android:layout_width="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:text="textView"
-            />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center_vertical"
@@ -94,16 +85,6 @@
             android:gravity="center_vertical"
             android:text="测试数据6"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="center_vertical"
-                android:text="测试数据2"/>
-        </LinearLayout>
     </LinearLayout>
 </com.lanma.customviewproject.views.ElasticityScrollView>
