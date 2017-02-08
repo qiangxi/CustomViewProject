@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/colorAccent">
 
-    <com.lanma.customviewproject.views.ElasticityListView
+    <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"

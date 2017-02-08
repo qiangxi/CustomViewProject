@@ -36,31 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mList.add(new MainListInfo("仿支付宝物流状态", StateLineActivity.class));
         mList.add(new MainListInfo("音量调节View", VolumeControlViewActivity.class));
         mList.add(new MainListInfo("ListPopupWindow", ListPopupWindowActivity.class));
-
-        mList.add(new MainListInfo("六边形View", HexagonTextViewDemoActivity.class));
-        mList.add(new MainListInfo("越界回弹ScrollView", ElasticityScrollViewActivity.class));
-        mList.add(new MainListInfo("雷达扫描view", RadarSearchViewActivity.class));
-        mList.add(new MainListInfo("RippleView", RippleViewActivity.class));
-        mList.add(new MainListInfo("侧滑删除layout", SlideLayoutActivity.class));
-        mList.add(new MainListInfo("仿支付宝物流状态", StateLineActivity.class));
-        mList.add(new MainListInfo("音量调节View", VolumeControlViewActivity.class));
-        mList.add(new MainListInfo("ListPopupWindow", ListPopupWindowActivity.class));
-        mList.add(new MainListInfo("六边形View", HexagonTextViewDemoActivity.class));
-        mList.add(new MainListInfo("越界回弹ScrollView", ElasticityScrollViewActivity.class));
-        mList.add(new MainListInfo("雷达扫描view", RadarSearchViewActivity.class));
-        mList.add(new MainListInfo("RippleView", RippleViewActivity.class));
-        mList.add(new MainListInfo("侧滑删除layout", SlideLayoutActivity.class));
-        mList.add(new MainListInfo("仿支付宝物流状态", StateLineActivity.class));
-        mList.add(new MainListInfo("音量调节View", VolumeControlViewActivity.class));
-        mList.add(new MainListInfo("ListPopupWindow", ListPopupWindowActivity.class));
-        mList.add(new MainListInfo("六边形View", HexagonTextViewDemoActivity.class));
-        mList.add(new MainListInfo("越界回弹ScrollView", ElasticityScrollViewActivity.class));
-        mList.add(new MainListInfo("雷达扫描view", RadarSearchViewActivity.class));
-        mList.add(new MainListInfo("RippleView", RippleViewActivity.class));
-        mList.add(new MainListInfo("侧滑删除layout", SlideLayoutActivity.class));
-        mList.add(new MainListInfo("仿支付宝物流状态", StateLineActivity.class));
-        mList.add(new MainListInfo("音量调节View", VolumeControlViewActivity.class));
-        mList.add(new MainListInfo("ListPopupWindow", ListPopupWindowActivity.class));
+        mList.add(new MainListInfo("音频条形图", AudioBarChartActivity.class));
         mListView.setAdapter(new MainListAdapter(this, mList));
         mListView.setOnItemClickListener(this);
     }
