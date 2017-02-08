@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mList.add(new MainListInfo("仿支付宝物流状态", StateLineActivity.class));
         mList.add(new MainListInfo("音量调节View", VolumeControlViewActivity.class));
         mList.add(new MainListInfo("ListPopupWindow", ListPopupWindowActivity.class));
-        mList.add(new MainListInfo("音频条形图", AudioBarChartActivity.class));
+
         mListView.setAdapter(new MainListAdapter(this, mList));
         mListView.setOnItemClickListener(this);
     }

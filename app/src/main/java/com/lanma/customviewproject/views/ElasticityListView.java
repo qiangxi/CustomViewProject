@@ -4,9 +4,8 @@ import android.content.Context;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.animation.DecelerateInterpolator;
+import android.view.ViewConfiguration;
 import android.widget.ListView;
-import android.widget.Scroller;
 
 /**
  * 作者 任强强 on 2017/1/19 15:58.
@@ -15,9 +14,10 @@ import android.widget.Scroller;
 
 public class ElasticityListView extends ListView {
     private int downY;
-    private int upY;
     private int initTop;
-    private Scroller mScroller;
+    private ElasticityListView mElasticityListView;
+    private int mTouchSlop;
+    private int newMoveY;
 
     public ElasticityListView(Context context) {
         this(context, null);
@@ -29,13 +29,14 @@ public class ElasticityListView extends ListView {
 
     public ElasticityListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mScroller = new Scroller(context, new DecelerateInterpolator());
+        mElasticityListView = this;
+        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return true;
-    }
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        return ScrollingUtil.isAbsListViewToBottom(this) || ScrollingUtil.isAbsListViewToTop(this);
+//    }
 
     @Override
     protected void onFinishInflate() {
@@ -55,20 +56,23 @@ public class ElasticityListView extends ListView {
                 ViewCompat.offsetTopAndBottom(this, v);
                 break;
             case MotionEvent.ACTION_UP:
-                upY = (int) event.getY();
-//                mScroller.startScroll(getLeft(), getTop(), 0, -initTop + getTop(), 3000);
-//                postInvalidate();
+//                ViewCompat.animate(this).translationY(initTop - getTop()).setListener(new ViewPropertyAnimatorListener() {
+//                    @Override
+//                    public void onAnimationStart(View view) {
+//                    }
+//
+//                    @Override
+//                    public void onAnimationEnd(View view) {
+//                        ViewCompat.setTranslationY(mElasticityListView, initTop);
+//                        requestLayout();
+//                    }
+//
+//                    @Override
+//                    public void onAnimationCancel(View view) {
+//                    }
+//                }).start();
                 break;
         }
-        return true;
-    }
-
-    @Override
-    public void computeScroll() {
-        super.computeScroll();
-        if (mScroller.computeScrollOffset()) {
-            ViewCompat.offsetTopAndBottom(this, mScroller.getCurrY());
-            postInvalidate();
-        }
+        return super.onTouchEvent(event);
     }
 }
