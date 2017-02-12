@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_scrape_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.lanma.customviewproject.views.ScrapeView
+        android:id="@+id/scrapeView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:backgroundText="恭喜您中了500万大奖"
+        app:backgroundTextSize="20sp"
+        app:paintWidth="30dp"
+        app:backgroundBitmap="@drawable/pic"
+        app:foregroundBitmap= "@drawable/pic"
+        app:scrapeStyle="text"
+        app:successPercent="0.6"
+        />
+</RelativeLayout>

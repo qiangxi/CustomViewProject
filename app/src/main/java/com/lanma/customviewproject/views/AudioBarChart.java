@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.lanma.customviewproject.util.ScreenUtils;
+import com.lanma.customviewproject.utils.ScreenUtils;
 
 import java.util.Random;
 

@@ -34,17 +34,33 @@
         <attr name="blockTotalCount" format="integer"/>
     </declare-styleable>
 
-    <declare-styleable name="SwipeBackLayout">
-        <attr name="edge_size" format="dimension"/>
-        <attr name="edge_flag">
-            <enum name="left" value="0"/>
-            <enum name="right" value="1"/>
-            <enum name="bottom" value="2"/>
-            <enum name="all" value="3"/>
+    <declare-styleable name="DashView">
+        <attr name="dashCount" format="integer"/>
+        <attr name="dashColor" format="color"/>
+        <attr name="dashDirection" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
         </attr>
-        <attr name="shadow_left" format="reference"/>
-        <attr name="shadow_right" format="reference"/>
-        <attr name="shadow_bottom" format="reference"/>
+        <attr name="dashShape" format="enum">
+            <enum name="rectangle" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+        <attr name="dashWidth" format="dimension"/>
+        <attr name="dashHeight" format="dimension"/>
+        <attr name="dashRange" format="dimension"/>
     </declare-styleable>
-    <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+
+    <declare-styleable name="ScrapeView">
+        <attr name="backgroundBitmap" format="reference"/>
+        <attr name="foregroundBitmap" format="reference"/>
+        <attr name="paintWidth" format="dimension"/>
+        <attr name="successPercent" format="float"/>
+        <attr name="backgroundText" format="string"/>
+        <attr name="backgroundTextSize" format="dimension"/>
+        <attr name="scrapeStyle" format="enum">
+            <enum name="image" value="0"/>
+            <enum name="text" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>

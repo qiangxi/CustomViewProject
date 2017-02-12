@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,7 +17,21 @@
 
     <com.lanma.customviewproject.views.AlphaImageView
         android:layout_width="100dp"
-        android:clickable="true"
         android:layout_height="100dp"
+        android:clickable="true"
         android:src="@mipmap/ic_launcher"/>
+
+    <com.lanma.customviewproject.views.DashView
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        app:dashColor="@android:color/black"
+        app:dashCount="25"
+        app:dashDirection="horizontal"
+        app:dashHeight="2dp"
+        app:dashRange="15dp"
+        app:dashShape="round"
+        app:dashWidth="15dp"/>
+
 </LinearLayout>
