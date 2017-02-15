@@ -13,6 +13,7 @@ public class AudioBarChartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_bar_chart);
+        setTitle("AudioBarChartActivity");
         chart = (AudioBarChart) findViewById(R.id.audioBarChart);
         chart.setBarChartCount(25);
     }

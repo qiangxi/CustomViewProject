@@ -13,6 +13,7 @@ public class ScrapeViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrape_view);
+        setTitle("ScrapeViewActivity");
         mScrapeView = (ScrapeView) findViewById(R.id.scrapeView);
     }
 }

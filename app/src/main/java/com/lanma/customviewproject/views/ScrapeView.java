@@ -17,6 +17,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 
 import com.lanma.customviewproject.R;
 import com.lanma.customviewproject.utils.ImageUtils;
@@ -46,6 +47,7 @@ public class ScrapeView extends View {
     private int mScrapeStyle = 1;//风格:0=图片/1=文本
     private int mDstTextSize = spToPx(20);//背景文本大小
     private static final int[] ScrapeStyle = {IMAGE, TEXT};
+    private int mTouchSlop;
 
     public ScrapeView(Context context) {
         this(context, null);
@@ -57,6 +59,7 @@ public class ScrapeView extends View {
 
     public ScrapeView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ScrapeView);
         for (int i = 0; i < a.getIndexCount(); i++) {
             int attr = a.getIndex(i);
@@ -152,6 +155,18 @@ public class ScrapeView extends View {
         return totalBitmapSize;
     }
 
+//    @Override
+//    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+//        super.onLayout(changed, left, top, right, bottom);
+//
+//    }
+
+//    @Override
+//    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+//        super.onSizeChanged(w, h, oldw, oldh);
+//        invalidate();
+//    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         //图片
@@ -222,15 +237,24 @@ public class ScrapeView extends View {
         }
     }
 
+    private int mLastX;
+    private int mLastY;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
+                mLastX = (int) event.getX();
+                mLastY = (int) event.getY();
                 mPath.moveTo(event.getX(), event.getY());
                 break;
             case MotionEvent.ACTION_MOVE:
-                mPath.lineTo(event.getX(), event.getY());
+                if (Math.abs(event.getX() - mLastX) > mTouchSlop || Math.abs(event.getY() - mLastY) > mTouchSlop) {
+                    mPath.lineTo(event.getX(), event.getY());
+                }
+                mLastX = (int) event.getX();
+                mLastY = (int) event.getY();
                 break;
             case MotionEvent.ACTION_UP:
                 //验证是否刮开到一定程度
@@ -238,6 +262,13 @@ public class ScrapeView extends View {
         }
         invalidate();
         return true;
+    }
+
+    /**
+     * 计算刮掉的实时百分比
+     */
+    private void calculateCurrentPercent() {
+
     }
 
     /**

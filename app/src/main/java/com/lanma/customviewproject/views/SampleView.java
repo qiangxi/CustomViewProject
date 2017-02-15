@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
@@ -25,6 +26,7 @@ public class SampleView extends View {
     private Matrix mMatrix;
     private Rect mTextRect;
     private String text = "这是文本";
+    private Path mPath;
 
     public SampleView(Context context) {
         this(context, null);
@@ -46,21 +48,20 @@ public class SampleView extends View {
         mPaint.setColor(Color.BLUE);
         mPaint.setDither(true);
         mPaint.setStrokeWidth(3);
-        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         mPaint.setTextSize(ScreenUtils.spToPx(getContext(), 18));
         mPaint.getTextBounds(text, 0, text.length(), mTextRect);
         mMatrix = new Matrix();
+        mPath = new Path();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        //在绘制的时候减去margin值和padding值
-//        mMatrix.setRotate(30);
-//        canvas.setMatrix(mMatrix);
-        canvas.drawRect(getLeft() - getLeftMargin() - getVGPaddingLeft(), getTop() - getTopMargin() - getVGPaddingTop(), getRight() - getLeftMargin() - getVGPaddingLeft(), getBottom() - getTopMargin() - getVGPaddingTop(), mPaint);
-        mMatrix.setTranslate(getWidth() / 2 + 10, getHeight() / 2);
-        canvas.setMatrix(mMatrix);
-        canvas.drawText(text, getTextStartX(), getTextStartY(1), mPaint);
+        mPath.moveTo(0, getHeight() / 2);
+        mPath.quadTo(getWidth() / 4, getHeight() / 3, getWidth() / 2, getHeight() / 2);
+        mPath.quadTo(getWidth() * 3 / 4, getHeight() * 2 / 3, getWidth(), getHeight() / 2);
+        mPath.close();
+        canvas.drawPath(mPath, mPaint);
     }
 
     /**

@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.HexagonTextViewDemoActivity"
@@ -23,19 +27,17 @@
         <activity android:name=".activities.SlideLayoutActivity"/>
         <activity android:name=".activities.ElasticityScrollViewActivity"/>
         <activity android:name=".activities.StateLineActivity">
-
         </activity>
         <activity android:name=".activities.RadarSearchViewActivity"/>
         <activity android:name=".activities.ListPopupWindowActivity"/>
         <activity android:name=".activities.AudioBarChartActivity"/>
         <activity android:name=".activities.ScrapeViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
-        <activity android:name=".activities.SampleViewActivity"/>
+        <activity android:name=".activities.SampleViewActivity">
+        </activity>
+        <activity android:name=".activities.WaterRipplesViewActivity">
+
+        </activity>
     </application>
 
 </manifest>
