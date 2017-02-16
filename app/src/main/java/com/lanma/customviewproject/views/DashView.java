@@ -15,6 +15,7 @@ import com.lanma.customviewproject.R;
 /**
  * 作者 任强强 on 2017/2/8 12:32.
  * 虚线View,一般用于优惠券中的分隔线等
+ * 可在实际项目中使用
  */
 
 public class DashView extends View {

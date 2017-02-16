@@ -35,9 +35,7 @@
         </activity>
         <activity android:name=".activities.SampleViewActivity">
         </activity>
-        <activity android:name=".activities.WaterRipplesViewActivity">
-
-        </activity>
+        <activity android:name=".activities.WaterRipplesViewActivity"/>
     </application>
 
 </manifest>

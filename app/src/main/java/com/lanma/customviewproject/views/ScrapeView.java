@@ -14,6 +14,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -21,6 +22,9 @@ import android.view.ViewConfiguration;
 
 import com.lanma.customviewproject.R;
 import com.lanma.customviewproject.utils.ImageUtils;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 /**
@@ -30,6 +34,7 @@ import com.lanma.customviewproject.utils.ImageUtils;
  */
 
 public class ScrapeView extends View {
+    private String TAG = ScrapeView.class.getSimpleName();
     //常量
     //ScrapeView风格
     public static final int IMAGE = 0;
@@ -48,6 +53,7 @@ public class ScrapeView extends View {
     private int mDstTextSize = spToPx(20);//背景文本大小
     private static final int[] ScrapeStyle = {IMAGE, TEXT};
     private int mTouchSlop;
+    private ExecutorService mExecutorService;
 
     public ScrapeView(Context context) {
         this(context, null);
@@ -99,6 +105,7 @@ public class ScrapeView extends View {
     }
 
     private void initConfig() {
+        mExecutorService = Executors.newSingleThreadExecutor();
         mPath = new Path();
         mDstRect = new Rect();
         mPaint = new Paint();
@@ -183,6 +190,7 @@ public class ScrapeView extends View {
         //绘制遮罩层
         drawForegroundBitmap(canvas);
         mPaint.setXfermode(porterDuffXfermode);
+        mPaint.setAlpha(80);
         mPaint.setStrokeWidth(mPaintWidth);
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
@@ -192,6 +200,8 @@ public class ScrapeView extends View {
         canvas.drawPath(mPath, mPaint);//绘制用户手指滑动区域
         mPaint.setXfermode(null);
         canvas.restoreToCount(saveCount);
+        Log.e(TAG, "mForegroundBitmap是否修改:" + mForegroundBitmap.getGenerationId());
+        Log.e(TAG, "mForegroundBitmap正中间颜色:" + mForegroundBitmap.getPixel(mForegroundBitmap.getWidth() / 2, mForegroundBitmap.getHeight() / 2));
     }
 
     private void drawBackgroundText(Canvas canvas) {
@@ -258,6 +268,7 @@ public class ScrapeView extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 //验证是否刮开到一定程度
+                calculateCurrentPercent();
                 break;
         }
         invalidate();
@@ -268,7 +279,12 @@ public class ScrapeView extends View {
      * 计算刮掉的实时百分比
      */
     private void calculateCurrentPercent() {
+        mExecutorService.execute(new Runnable() {
+            @Override
+            public void run() {
 
+            }
+        });
     }
 
     /**
