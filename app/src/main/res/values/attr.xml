@@ -63,4 +63,10 @@
             <enum name="text" value="1"/>
         </attr>
     </declare-styleable>
+    <declare-styleable name="BgLinearLayout">
+        <attr name="bgHeightPercent" format="float"/>
+        <attr name="bgColor" format="color"/>
+        <attr name="bgHeight" format="dimension"/>
+    </declare-styleable>
+
 </resources>
