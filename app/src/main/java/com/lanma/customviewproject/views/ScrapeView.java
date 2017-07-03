@@ -289,6 +289,7 @@ public class ScrapeView extends View {
 
     /**
      * 设置前景图片(遮罩层图片)
+     *
      * @param srcBitmap 前景图片
      */
     public void setForegroundBitmap(Bitmap srcBitmap) {
@@ -302,6 +303,7 @@ public class ScrapeView extends View {
 
     /**
      * 设置背景图片
+     *
      * @param dstBitmap 背景图片
      */
     public void setBackgroundBitmap(Bitmap dstBitmap) {
@@ -316,6 +318,7 @@ public class ScrapeView extends View {
 
     /**
      * 设置擦除线的宽度
+     *
      * @param paintWidth 单位dp,默认15dp
      */
     public void setPaintWidth(float paintWidth) {
@@ -329,6 +332,7 @@ public class ScrapeView extends View {
 
     /**
      * 设置刮开成功百分比
+     *
      * @param scrapeSuccessPercent 默认0.4F
      */
     public void setScrapeSuccessPercent(float scrapeSuccessPercent) {
@@ -354,6 +358,7 @@ public class ScrapeView extends View {
 
     /**
      * 设置背景文本大小
+     *
      * @param dstTextSize 单位sp,默认20sp
      */
     public void setBackgroundTextSize(int dstTextSize) {
@@ -367,6 +372,7 @@ public class ScrapeView extends View {
 
     /**
      * 设置背景风格
+     *
      * @param scrapeStyle ScrapeView.IMAGE(默认) / ScrapeView.TEXT
      */
     public void setScrapeStyle(int scrapeStyle) {
