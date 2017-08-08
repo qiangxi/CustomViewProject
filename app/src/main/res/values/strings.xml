@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">CustomViewProject</string>
     <string name="HexagonTextViewDemoActivity">HexagonTextViewDemo</string>
+    <string name="title_activity_shadow_practise">ShadowPractiseActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
